@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/grag/.gradle/caches/modules-2/files-2.1/com.facebook.stetho/stetho-okhttp/1.2.0/6c5c9380e245c4ff5be2b2a49dcbb0200c39798e/stetho-okhttp-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6c5c9380e245c4ff5be2b2a49dcbb0200c39798e">
+        <dex dex="/home/grag/AndroidStudioProjects/LifeStat/app/build/intermediates/pre-dexed/debug/stetho-okhttp-1.2.0-844655b92ff31a2f1fe9ab296d6c9f556fb89522.jar" />
+    </item>
+    <item
+        jar="/home/grag/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.2.0/959c454243581fdf730abfd4f4745441724bcf2c/okhttp-2.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="959c454243581fdf730abfd4f4745441724bcf2c">
+        <dex dex="/home/grag/AndroidStudioProjects/LifeStat/app/build/intermediates/pre-dexed/debug/okhttp-2.2.0-8a99c5554a4c68da3e1086cef4218b97cb9818ef.jar" />
+    </item>
+    <item
+        jar="/home/grag/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.2.0/c0b52915a48fa91b1b94a28d4a2997bac5f524df/okio-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c0b52915a48fa91b1b94a28d4a2997bac5f524df">
+        <dex dex="/home/grag/AndroidStudioProjects/LifeStat/app/build/intermediates/pre-dexed/debug/okio-1.2.0-c168b1dc3077fcb5cbcd90bd0cdec9a6da4df09d.jar" />
+    </item>
+
+</items>
