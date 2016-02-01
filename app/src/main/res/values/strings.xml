@@ -1,0 +1,81 @@
+<resources>
+    <!--Заглавия и основные надписи-->
+    <string name="app_name">LifeStat</string>
+    <string name="app_settings_name">Settings</string>
+    <string name="app_user_settings_name">User settings</string>
+    <string name="app_day_detail_name">Day detail</string>
+    <string name="action_main_settings">Settings</string>
+    <string name="action_user_settings">User settings</string>
+    <string name="action_day_detail">Day detail</string>
+    <string name="action_input">Input data</string>
+    <string name="action_new">New</string>
+    <string name="action_update">Update</string>
+    <string name="action_delete">Delete</string>
+    <string name="day_detail">day detail</string>
+    <string name="days">days</string>
+    <string name="days_23">23 days</string>
+    <string name="action_statistic">Statistic</string>
+    <string name="action_common_statistic">Common statistic</string>
+    <string name="pressure">Pressure</string>
+    <string name="temperature">Temperature</string>
+    <string name="moon_day">Moon day</string>
+    <string name="weather">Weather</string>
+
+    <!--Настройки Preference-->
+    <string name="pref_send_notify">Notify Enable</string>
+    <string name="pref_send_notify_desc">Send notification to user: \'Check time\'</string>
+    <string name="pref_send_to_server">Send to server</string>
+    <string name="pref_send_to_server_desc">Send information to server. If You send infomation, you can take common statistic.</string>
+    <string name="pref_user_params">User params</string>
+    <string name="pref_user_params_desc">Choose user params</string>
+    <string name="pref_user_data">User data</string>
+    <string name="pref_birthdate">Birthdate</string>
+    <string name="pref_count_notifications">Count notification</string>
+    <string name="pref_count_notifications_desc">Count notification per day</string>
+    <string name="pref_time_notification">Time notification</string>
+    <string name="pref_time_notification_desc">Time notification settings</string>
+    <string name="pref_notificaton_time_list">Notification time list</string>
+    <string name="pref_user_name">User name</string>
+    <string name="pref_research_periods">Research periods</string>
+    <string name="pref_moon_cycle">Moon cycle</string>
+    <string name="pref_physical_biorythm">Physical biorythm</string>
+
+    <string-array name="pref_count_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="pref_count_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <!--Окно параметров пользователя-->
+    <string name="param_setting_title">Params</string>
+    <string name="other_setting_title">User settings</string>
+
+
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="input_value">Input value</string>
+    <string name="name">Name</string>
+    <string name="name_is_required">Name is required</string>
+    <string name="description">Description</string>
+    <string name="next_symbol">&gt;</string>
+    <string name="previous_symbol">&lt;</string>
+
+    <!--Стандартные параметры статистики-->
+    <string name="stat_param_mood">MOOD</string>
+    <string name="stat_param_love">LOVE</string>
+    <string name="stat_param_brain">BRAIN</string>
+    <string name="stat_param_health">HEALTH</string>
+    <string name="stat_param_mood_desc">Your mood</string>
+    <string name="stat_param_love_desc">Relations with your lover(s)</string>
+    <string name="stat_param_brain_desc">Intellect and your brain activities</string>
+    <string name="stat_param_health_desc">Health level</string>
+</resources>
