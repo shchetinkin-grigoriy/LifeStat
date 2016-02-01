@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_user_name"
+        android:title="@string/pref_user_name"
+        android:inputType="text"/>
+
+    <com.andrgree.lifestat.preference.DatePreference
+        android:key="pref_birth_date"
+        android:title="@string/pref_birthdate"
+        android:summary=""/>
+
+    <CheckBoxPreference
+        android:key="pref_send_to_server"
+        android:title="@string/pref_send_to_server"
+        android:summary="@string/pref_send_to_server_desc"
+        android:defaultValue="true" />
+
+    <PreferenceScreen
+        android:title="@string/pref_time_notification"
+        android:summary="@string/pref_time_notification_desc"
+        android:key="pref_user_data">
+        <CheckBoxPreference
+            android:key="pref_notify_user"
+            android:title="@string/pref_send_notify"
+            android:summary="@string/pref_send_notify_desc"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:dependency="pref_send_to_server"
+            android:entries="@array/pref_count_list"
+            android:entryValues="@array/pref_count_list_values"
+            android:key="pref_count_notification"
+            android:summary="@string/pref_count_notifications_desc"
+            android:defaultValue="3"
+            android:title="@string/pref_count_notifications">
+        </ListPreference>
+
+        <PreferenceCategory
+            android:title="@string/pref_notificaton_time_list"
+            android:key="pref_notificaton_time_list">
+
+            <com.andrgree.lifestat.preference.TimePreference
+                android:key="pref_time_1"
+                android:title="@string/pref_time_notification"
+                android:enabled="true"
+                android:defaultValue="0"
+                />
+
+            <com.andrgree.lifestat.preference.TimePreference
+                android:key="pref_time_2"
+                android:title="@string/pref_time_notification"
+                android:enabled="true"
+                android:defaultValue="0"
+                />
+
+            <com.andrgree.lifestat.preference.TimePreference
+                android:key="pref_time_3"
+                android:title="@string/pref_time_notification"
+                android:enabled="true"
+                android:defaultValue="0"
+                />
+
+            <com.andrgree.lifestat.preference.TimePreference
+                android:key="pref_time_4"
+                android:title="@string/pref_time_notification"
+                android:enabled="true"
+                android:defaultValue="0"
+                />
+
+            <com.andrgree.lifestat.preference.TimePreference
+                android:key="pref_time_5"
+                android:title="@string/pref_time_notification"
+                android:enabled="false"
+                android:defaultValue="0"
+                />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <Preference android:title="@string/pref_user_params"
+        android:summary="@string/pref_user_params_desc"
+        >
+        <intent android:action="android.intent.action.VIEW"
+            android:targetClass="com.andrgree.lifestat.UserSettingActivity"
+            android:targetPackage="com.andrgree.lifestat"
+            />
+    </Preference>
+
+    <PreferenceScreen
+        android:title="@string/pref_research_periods"
+        android:key="pref_research_periods">
+
+        <CheckBoxPreference
+            android:key="pref_moon_cycle"
+            android:title="@string/pref_moon_cycle"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="pref_physical_biorythm"
+            android:title="@string/pref_physical_biorythm"
+            android:summary="@string/days_23"
+            android:defaultValue="true" />
+
+    </PreferenceScreen>
+</PreferenceScreen>
