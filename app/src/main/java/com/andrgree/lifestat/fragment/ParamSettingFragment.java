@@ -141,7 +141,6 @@ public class ParamSettingFragment extends Fragment implements LoaderManager.Load
             getContext().getContentResolver().insert(DataBaseContentProvider.STAT_PARAM_URI, values);
         } else {
             getContext().getContentResolver().update(ContentUris.withAppendedId(DataBaseContentProvider.STAT_PARAM_URI, paramId), values, null, null);
-
         }
     }
 

@@ -21,6 +21,10 @@
     <string name="moon_day">Moon day</string>
     <string name="weather">Weather</string>
 
+    <!--Настройки Drawer-->
+    <string name="menu_user_action">User actions</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <!--Настройки Preference-->
     <string name="pref_send_notify">Notify Enable</string>
     <string name="pref_send_notify_desc">Send notification to user: \'Check time\'</string>
@@ -39,6 +43,9 @@
     <string name="pref_research_periods">Research periods</string>
     <string name="pref_moon_cycle">Moon cycle</string>
     <string name="pref_physical_biorythm">Physical biorythm</string>
+
+    <string name="notify_input_title">Input info</string>
+    <string name="notify_input_desc">Time to enter you mood</string>
 
     <string-array name="pref_count_list">
         <item>1</item>
