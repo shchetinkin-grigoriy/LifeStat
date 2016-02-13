@@ -12,8 +12,12 @@ import android.preference.PreferenceManager;
 import android.widget.TimePicker;
 
 import com.andrgree.lifestat.R;
+import com.andrgree.lifestat.listener.TimePreferenceChangeListener;
 import com.andrgree.lifestat.preference.DatePreference;
 import com.andrgree.lifestat.preference.TimePreference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by grag on 12/1/15.
@@ -24,6 +28,7 @@ public class MainSettingFragment extends PreferenceFragment {
     PreferenceCategory notificatonTimeList;
     EditTextPreference nameUser;
     DatePreference birthDate;
+    List<TimePreference> timePreferenceList;
 
     private void refreshNotificationFields() {
         notifyUser = (CheckBoxPreference) findPreference("pref_notify_user");
@@ -35,6 +40,7 @@ public class MainSettingFragment extends PreferenceFragment {
         countNotification.setSummary(countNotification.getValue());
         birthDate.setSummary(DatePreference.formatter().format(birthDate.getDate().getTime()));
         Integer count = Integer.parseInt(countNotification.getValue());
+
         for (int i = 1; i <= 5; i++) {
             TimePreference time = (TimePreference) findPreference("pref_time_" + i);
             time.setEnabled(notifyUser.isChecked() && i <= count);
@@ -46,10 +52,16 @@ public class MainSettingFragment extends PreferenceFragment {
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.preference);
+        timePreferenceList = new ArrayList<>();
         PreferenceManager.setDefaultValues(getActivity(), R.xml.preference, false);
+        TimePreferenceChangeListener timePreferenceChangeListener = new TimePreferenceChangeListener(this);
         for (int i = 1; i <= 5; i++) {
             TimePreference time = (TimePreference) findPreference("pref_time_" + i);
             time.setTitle(time.getTitle() + " " + i);
+            timePreferenceList.add(time);
+
+            time.setOnPreferenceChangeListener(timePreferenceChangeListener);
+
         }
         refreshNotificationFields();
 
@@ -88,4 +100,7 @@ public class MainSettingFragment extends PreferenceFragment {
         });
     }
 
+    public List<TimePreference>  getTimePreferenceList() {
+        return timePreferenceList;
+    }
 }

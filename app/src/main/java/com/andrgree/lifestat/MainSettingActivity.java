@@ -15,7 +15,6 @@ public class MainSettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_setting);
 
         getFragmentManager().beginTransaction().replace(R.id.mainSettings, new MainSettingFragment()).commit();
-
     }
 
 }
