@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.andrgree.lifestat" >
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".LSApplication"
         android:allowBackup="true"
@@ -20,21 +21,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@string/app_settings_name"
-            android:name=".MainSettingActivity" >
+            android:name=".MainSettingActivity"
+            android:label="@string/app_settings_name" >
         </activity>
         <activity
-            android:label="@string/app_user_settings_name"
-            android:name=".UserSettingActivity" >
+            android:name=".UserSettingActivity"
+            android:label="@string/app_user_settings_name" >
         </activity>
         <activity
-            android:label="@string/app_day_detail_name"
-            android:name=".DayDetailActivity" >
+            android:name=".DayDetailActivity"
+            android:label="@string/app_day_detail_name" >
         </activity>
+
         <provider
             android:name=".db.DataBaseContentProvider"
             android:authorities="com.andrgree.lifestat.db" >
         </provider>
+
+        <service
+            android:name=".scheduler.CheckTimeJobService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <receiver android:name=".reciever.CheckTimeReciever"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
