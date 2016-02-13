@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.andrgree.lifestat.db.table.CheckTimestamp;
 import com.andrgree.lifestat.db.table.StatParam;
 import com.andrgree.lifestat.db.table.UserStat;
 
@@ -41,6 +42,7 @@ public class DataBaseContentProvider extends ContentProvider {
     private static final String CHECK_TIMESTAMP_PATH = "check-timestamp";
     public static final Uri STAT_PARAM_URI = Uri.parse("content://" + AUTHORITY + "/" + STAT_PARAM_PATH);
     public static final Uri USER_STAT_URI = Uri.parse("content://" + AUTHORITY + "/" + USER_STAT_PATH);
+    public static final Uri CHECK_TIMESTAMP_URI = Uri.parse("content://" + AUTHORITY + "/" + CHECK_TIMESTAMP_PATH);
 
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
@@ -169,6 +171,9 @@ public class DataBaseContentProvider extends ContentProvider {
                 id = sqlDB.insert(UserStat.TABLE, null, values);
                 getContext().getContentResolver().notifyChange(STAT_PARAM_URI, null);
                 getContext().getContentResolver().notifyChange(USER_STAT_URI, null);
+                break;
+            case CHECK_TIMESTAMPS:
+                id = sqlDB.insert(CheckTimestamp.TABLE, null, values);
                 break;
             default:
                 throw new IllegalArgumentException("Unknown URI: " + uri);
