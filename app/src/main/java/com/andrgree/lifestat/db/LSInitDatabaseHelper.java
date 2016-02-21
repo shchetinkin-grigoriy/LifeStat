@@ -50,6 +50,11 @@ public class LSInitDatabaseHelper extends SQLiteOpenHelper {
     String TABLE_CHECK_TIMESTAMP_CREATE = "create table "
             + CheckTimestamp.TABLE + "("
             + CheckTimestamp.COLUMN_ID + " integer primary key autoincrement, "
+            + CheckTimestamp.COLUMN_TEMPERATURE + " text, "
+            + CheckTimestamp.COLUMN_PRESSURE + " text, "
+            + CheckTimestamp.COLUMN_MOON_DAY + " text, "
+            + CheckTimestamp.COLUMN_HUMIDITY + " text, "
+            + CheckTimestamp.COLUMN_WIND + " text, "
             + CheckTimestamp.COLUMN_TS + " DATETIME DEFAULT CURRENT_TIMESTAMP);";
 
     public LSInitDatabaseHelper(Context context) {

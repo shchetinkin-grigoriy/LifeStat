@@ -57,6 +57,7 @@ public class TimePreferenceChangeListener implements Preference.OnPreferenceChan
                 calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(time[0]));
                 calendar.set(Calendar.MINUTE, Integer.parseInt(time[1].split(" ")[0]));
 
+                //alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmIntent);
                 alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmIntent);
                 /*Calendar cal = Calendar.getInstance();
                 alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 30*1000, alarmIntent);*/

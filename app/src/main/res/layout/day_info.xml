@@ -32,6 +32,7 @@
         android:id="@+id/pressureLabel"
         android:layout_row="0" />
     <TextView
+        android:id="@+id/pressureValue"
         android:layout_column="2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,8 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/weather"
-        android:id="@+id/weatherLabel"
+        android:text="@string/wind"
+        android:id="@+id/windLabel"
         android:layout_row="2"
         android:layout_column="1" />
     <TextView
@@ -78,7 +79,7 @@
         android:width="@dimen/field_value_width"
         android:textAlignment="textEnd"
         android:gravity="end"
-        android:id="@+id/weatherValue"
+        android:id="@+id/windValue"
         android:layout_row="2"
         android:layout_column="2" />
 

@@ -131,10 +131,19 @@ public class DataBaseContentProvider extends ContentProvider {
         return cursor;
     }
 
+    private Cursor checkTimestampCursor(int uriType, String[] selectionArgs) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("select id, temperature, pressure, mood_day, humidity, wind, create_date from check_timestamp  order by create_date desc limit 1 ");
+
+        SQLiteDatabase db = database.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql.toString(), selectionArgs);
+
+        return cursor;
+    }
+
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
-        //checkColumns(projection);
 
         int uriType = sURIMatcher.match(uri);
         Cursor cursor;
@@ -142,6 +151,8 @@ public class DataBaseContentProvider extends ContentProvider {
             cursor = statParamCursor(uriType, uri.getLastPathSegment(), projection, selection, selectionArgs, sortOrder);
         } else if (uriType == USER_STATS || uriType == USER_STAT_ID) {
             cursor = userStatCursor(uriType, selectionArgs);
+        } else if (uriType == CHECK_TIMESTAMPS || uriType == CHECK_TIMESTAMP_ID) {
+            cursor = checkTimestampCursor(uriType, selectionArgs);
         } else {
             throw new IllegalArgumentException("Unknown URI: " + uri);
         }

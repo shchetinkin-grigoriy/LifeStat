@@ -20,6 +20,7 @@
     <string name="temperature">Temperature</string>
     <string name="moon_day">Moon day</string>
     <string name="weather">Weather</string>
+    <string name="wind">Wind</string>
 
     <!--Настройки Drawer-->
     <string name="menu_user_action">User actions</string>
@@ -33,6 +34,7 @@
     <string name="pref_user_params">User params</string>
     <string name="pref_user_params_desc">Choose user params</string>
     <string name="pref_user_data">User data</string>
+    <string name="pref_user_city">User city</string>
     <string name="pref_birthdate">Birthdate</string>
     <string name="pref_count_notifications">Count notification</string>
     <string name="pref_count_notifications_desc">Count notification per day</string>
