@@ -10,9 +10,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.provider.CalendarContract;
+import android.support.v4.content.CursorLoader;
 
 import com.andrgree.lifestat.MainActivity;
 import com.andrgree.lifestat.R;
@@ -20,6 +22,7 @@ import com.andrgree.lifestat.db.DataBaseContentProvider;
 import com.andrgree.lifestat.db.table.CheckTimestamp;
 import com.andrgree.lifestat.db.table.StatParam;
 import com.andrgree.lifestat.db.table.UserStat;
+import com.andrgree.lifestat.rest.WeatherShowInfo;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -44,9 +47,17 @@ public class CheckTimeReciever extends BroadcastReceiver {
         if (intent.getAction() != null && intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
             // Set the alarm here.
         } else {
+            WeatherShowInfo weatherShowInfo = ((MainActivity)context).weatherShowInfo;
             //Запись в базу
             ContentValues values = new ContentValues();
             values.put(CheckTimestamp.COLUMN_TS, dateFormat.format(new Date()));
+            if(weatherShowInfo != null) {
+                values.put(CheckTimestamp.COLUMN_TEMPERATURE, weatherShowInfo.getTemperature());
+                values.put(CheckTimestamp.COLUMN_PRESSURE, weatherShowInfo.getPressure());
+                values.put(CheckTimestamp.COLUMN_MOON_DAY, weatherShowInfo.getMoodDay());
+                values.put(CheckTimestamp.COLUMN_HUMIDITY, weatherShowInfo.getHumidity());
+                values.put(CheckTimestamp.COLUMN_WIND, weatherShowInfo.getWind());
+            }
             context.getContentResolver().insert(DataBaseContentProvider.CHECK_TIMESTAMP_URI, values);
 
             //Отправка уведомления

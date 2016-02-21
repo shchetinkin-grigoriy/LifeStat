@@ -5,6 +5,12 @@
         android:title="@string/pref_user_name"
         android:inputType="text"/>
 
+    <EditTextPreference
+        android:key="pref_user_city"
+        android:title="@string/pref_user_city"
+        android:defaultValue="London"
+        android:inputType="text"/>
+
     <com.andrgree.lifestat.preference.DatePreference
         android:key="pref_birth_date"
         android:title="@string/pref_birthdate"
